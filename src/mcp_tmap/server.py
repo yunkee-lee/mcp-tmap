@@ -13,6 +13,7 @@ TMAP MCP provides tools for accessing the mobility platform provided by TMAP in 
 - publicTransitRoutes: Retrieves public transit routes between two places.
   The response contains [legs], which are legs of the retrieved route.
   Use [start.name] in each leg to return a chain of legs.
+  The underlying API is often rate-limited, so you have to ask a user if they really want to proceed with this tool.
 - fullTextAddressGeocoding: Converts an address in full text into coordinates.
   The response contains a list of coordinates, which are ordered by the relevancy.
   If the entered address is not accurate, the response contains coordinates of a similar location.
@@ -72,7 +73,7 @@ async def publicTransitRoutes(
     return { "success": False, "error": str(ex) }
 
 @mcp.tool()
-async def fullTextAddressGeocoding(address: str) -> List:
+async def fullTextAddressGeocoding(address: str) -> List | Dict:
   """Converts the given address to coordinates (geocoding).
 
   Args

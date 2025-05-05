@@ -2,6 +2,10 @@
 
 The MCP connects to the TMAP API.
 
+<a href="https://glama.ai/mcp/servers/@yunkee-lee/mcp-tmap">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@yunkee-lee/mcp-tmap/badge" alt="TMAP Server MCP server" />
+</a>
+
 It currently supports the following APIs:
 * [Public Transit API](https://openapi.sk.com/products/detail?svcSeq=59&menuSeq=394)
   * Transit route
